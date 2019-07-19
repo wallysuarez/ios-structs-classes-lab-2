@@ -40,11 +40,9 @@ class Animal {
 b. Override the printDescription method to have the instance of the Bird object print out its name and whether it can fly
 
 
-c. Create a Robin subclass of Bird.  Its name should always be "Robin".
-
-
 ## Question 4
 
+```swift
 class Bike {
   let wheelNumber = 2
   let wheelWidth = 1.3
@@ -55,9 +53,48 @@ class Bike {
     }
   }
 }
+```
+
+
+a. Create a `LoudBike` subclass of Bike.  When you call `ringBell` it should ring the bell in all caps.
+
+b. Give `LoudBike` a new method called `ringBell(times:)` that rings the bell a given number of times
 
 
 ## Question 5
+
+```swift
+class Shape {
+    var name: String { return "This is a generic shape" }
+    var area: Double { fatalError("Subclasses must override the area") }
+    var perimeter: Double { fatalError("Subclasses must override the perimeter") }
+}
+```
+
+a. Given the `Shape` object above, create a subclass `Square` with a property `sideLength` with a default value of 5.
+
+b. Override the `area` and `perimeter` computed values so the return the area/perimeter of the square as appropriate
+
+c. Override the `name` property of `Square` so that it returns a String containing its name ("Square") and its area and perimeter
+
+d. Create a class `Rectangle` that subclasses from `Shape`.  Give it a `width` property with a default value of 6 and a `height` property with a default value of 4
+
+e. Override the `name` property of `Rectangle` so that it returns a String containing its name ("Rectangle") and its area and perimeter.
+
+f. (BONUS) What happens when you run the code below?  Explain why.
+
+```swift
+var myShapes = [Shape]()
+
+myShapes.append(Square())
+myShapes.append(Rectangle())
+
+for shape in myShapes {
+    print("This is a \(shape.name) with an area of \(shape.area) and a perimeter of \(shape.perimeter)")
+}
+```
+
+## Question 6
 
 a. Given the Point object below, complete the `distance method` so that it returns the distance between a given point.
 
@@ -112,7 +149,7 @@ circleOne.contains(circleOne.getRandomPoint()) //Should always be true
 ```
 
 
-## Question 6
+## Question 7
 
 a. Create a struct called HangmanModel with 3 properties `targetWord: String`, `numberOfIncorrectGuesses: Int` and `guessedLetters: [Character]`.
 
@@ -123,13 +160,15 @@ model.targetWord = "hello"
 model.guessedLetters = ["h","e","o","l"]
 model.playerWon //true
 
-c. Add a method called `printDisplayVersionOfWord` that prints the `targetWord` replacing characters that are not in `guessedLetters` with "_"
+c. Add a method called `printDisplayVersionOfWord` that prints the `targetWord` replacing characters that are not in `guessedLetters` with "\_"
 
+```
 var model = HangmanModel()
 model.targetWord = "hello"
 model.guessedLetters = ["h","l"]
 model.printDisplayVersionOfWord
 //prints h_ll_
+```
 
 d. Add a method called `guess(_:)` that takes in a character as input, and updates `guessedLetters` and `numberOfIncorrectGuesses` as appropriate.
 
