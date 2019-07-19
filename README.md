@@ -155,10 +155,12 @@ a. Create a struct called HangmanModel with 3 properties `targetWord: String`, `
 
 b. Add a method called `playerWon` that returns whether all of the characters in `targetWord` are in `guessedLetters`
 
+```swift
 var model = HangmanModel()
 model.targetWord = "hello"
 model.guessedLetters = ["h","e","o","l"]
 model.playerWon //true
+```
 
 c. Add a method called `printDisplayVersionOfWord` that prints the `targetWord` replacing characters that are not in `guessedLetters` with "\_"
 
@@ -172,11 +174,13 @@ model.printDisplayVersionOfWord
 
 d. Add a method called `guess(_:)` that takes in a character as input, and updates `guessedLetters` and `numberOfIncorrectGuesses` as appropriate.
 
+```swift
 var model = HangmanModel()
 model.targetWord = "hello"
 model.guess("h")
 model.guess("a")
 model.guessedLetters // ["h", "a"]
 model.numberOfIncorrectGuesses // 1
+```
 
 e. Have `guess(_:)` also print out the current display version of the word, the number of incorrect guesses and if the player has won.
