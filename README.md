@@ -96,9 +96,15 @@ for shape in myShapes {
 
 ## Question 6
 
-a. Given the Point object below, complete the `distance method` so that it returns the distance between a given point.
+a. Given the Point object below, complete the `distance` method so that it returns the distance between a given point.
 
-The equation for the distance formula can be found [here](https://www.mathsisfun.com/algebra/distance-2-points.html).
+The equation for the distance formula can be found [here](https://www.mathsisfun.com/algebra/distance-2-points.html) and is give by:
+
+```swift
+let horizontalDistance = pointOneXValue - pointTwoXValue
+let verticalDistance = pointOneYValue - pointTwoYValue
+let distanceBetweenTwoPoints = sqrt(horizontalDistance * horizontalDistance + verticalDistance * verticalDistance)
+```
 
 `sqrt` is a method in Swift that gives the square root.  Make sure to have `import Foundation` or `import UIKit` to use this method.
 
@@ -107,7 +113,7 @@ struct Point {
     let x: Double
     let y: Double
     func distance(to point: Point) -> Double {
-
+      //Code in your answer here
     }
 }
 
