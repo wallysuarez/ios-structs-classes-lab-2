@@ -23,10 +23,19 @@ class Bike {
     var hasBell = false
 }
 ```
+```swift
+var myBike = Bike()
+var bigWheel = myBike
+bigWheel.wheelNumber = 3
+
+print(myBike.wheelNumber)
+print(bigWheel.wheelNumber)
+```
 
 ## Question 3
 
 a. Given the Animal class below, create a Bird subclass with a new `canFly` property.
+b. Override the printDescription method to have the instance of the Bird object print out its name and whether it can fly
 
 ```swift
 class Animal {
@@ -36,8 +45,25 @@ class Animal {
     }
 }
 ```
+```swift
+//answer for A&B
 
-b. Override the printDescription method to have the instance of the Bird object print out its name and whether it can fly
+class Bird: Animal {
+    var canFly: Bool = true 
+    init(canFly: Bool) {
+    self.canFly = canFly
+}
+override func printDescription() {
+    if canFly == true {
+        print("I am a bird named \(name), and I can fly")
+    } else {
+        print("I am a bird and cannot fly")
+    }
+}
+}
+```
+
+
 
 
 ## Question 4
@@ -114,6 +140,9 @@ struct Point {
     let y: Double
     func distance(to point: Point) -> Double {
       //Code in your answer here
+      let horizontal = self.x - point.x
+      let vertical = self.y - point.y
+      return sqrt(horizontal * horizontal + vertical * vertical)
     }
 }
 
@@ -130,6 +159,17 @@ b. Given the above Point object, and Circle object below, add a `contains` metho
 struct Circle {
     let radius: Double
     let center: Point
+    
+    func contain(point: Point) -> {
+    return center.distance(to: point) == radius
+    }
+    func gimmeRandomPoint() -> Point {
+    //if we have some x, then y = √(r^2) - (x^2)
+    let x: Double = Double.random(in: (0-radius)...radius)
+    let y = sqrt()
+    return Point(x: x, y: y)
+    }
+    }
 }
 
 let pointOne = Point(x: 0, y: 0)
